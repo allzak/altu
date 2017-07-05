@@ -7,8 +7,8 @@ addons:
       - oracle-java8-installer
   sonarcloud:
       organization: "allzak" # the key of the org you chose at step #3
-      token:
-        secure: SONAR_TOKEN # encrypted value of your token
+#      token:
+#        secure: SONAR_TOKEN # encrypted value of your token
       branches:
             - master
             - init_project

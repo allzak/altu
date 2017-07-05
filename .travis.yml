@@ -8,14 +8,14 @@ addons:
   sonarcloud:
       organization: "allzak" # the key of the org you chose at step #3
       token:
-        secure: d0090fd8f2bb3011f35904c4aa68471e924af0b5 # encrypted value of your token
+        secure: SONAR_TOKEN # encrypted value of your token
       branches:
             - master
             - init_project
 script:
     # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
-  - mvn clean package
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+    - mvn clean package
       
 jdk:
   - oraclejdk8   

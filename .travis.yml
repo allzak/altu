@@ -1,0 +1,20 @@
+language: java
+
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+  sonarcloud:
+      organization: "allzak" # the key of the org you chose at step #3
+      token:
+        secure: SONAR_TOKEN # encrypted value of your token
+      branches:
+            - master
+            - init_project
+  script:
+    # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+      
+jdk:
+  - oraclejdk8   
